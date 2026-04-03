@@ -24,14 +24,26 @@
     }
 
     /* Background image */
-    .bg-image {
-      position: absolute;
-      inset: 0;
-      background: url('eye.png') center/cover no-repeat;
-      opacity: 0;
-      transition: opacity 3s ease-in-out;
-      z-index: 0;
-    }
+   .bg-image {
+  position: absolute;
+  inset: 0;
+  background: url('./bg.png') center/cover no-repeat;
+  opacity: 0;
+  transition: opacity 3s ease-in-out;
+  z-index: 0;
+}
+
+@media (max-width: 768px) {
+  .bg-image {
+    top: 50%;
+    left: 50%;
+    width: 100vh;
+    height: 100vw;
+    inset: unset;
+    background: url('./bg.png') center/contain no-repeat;
+    transform: translate(-50%, -50%) rotate(90deg);
+  }
+}
 
     .bg-image.show {
       opacity: 1;
